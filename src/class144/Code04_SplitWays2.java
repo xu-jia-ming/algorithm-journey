@@ -56,19 +56,7 @@ public class Code04_SplitWays2 {
 
 	// LeetCode提交方法
 	public static int countOfPairs(int[] arr) {
-		int n = arr.length;
-		// 原始题意，k = arr[0] - 1，这里改成，k = arr[0] + 1
-		// 其他代码毫无区别
-		int k = arr[0] + 1;
-		for (int i = 1; i < n && k > 0; i++) {
-			if (arr[i - 1] > arr[i]) {
-				k -= arr[i - 1] - arr[i];
-			}
-		}
-		if (k <= 0) {
-			return 0;
-		}
-		return c(k + n - 1, n);
+		return ways2(arr);
 	}
 
 	public static int c(int n, int k) {
